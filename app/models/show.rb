@@ -10,4 +10,13 @@ class Show < ActiveRecord::Base
     return show
   end
   
+  def self.lowest_rating
+    show = Show.minimum(:rating)
+    return show
+  end
+
+  def self.least_popular_show
+    show = Show.where(rating: Show.lowest_rating)[0]
+    return show
+  end
 end
