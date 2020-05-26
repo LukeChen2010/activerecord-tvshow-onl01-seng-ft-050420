@@ -5,4 +5,7 @@ class Show < ActiveRecord::Base
     return show
   end
   
+  def self.most_popular_show
+  end
+  
 end
